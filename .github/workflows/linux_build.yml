@@ -7,10 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: install depends
       run: |
         sudo apt update
-        sudo apt install -y libssl1.0-dev libevent-dev
+        sudo apt install -qq -y libssl* libevent*
     - name: Build
       run: make
+    - name: F
+      run: ls -lah

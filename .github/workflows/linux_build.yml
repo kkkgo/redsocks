@@ -12,5 +12,10 @@ jobs:
         sudo apt install -qq -y libssl* libevent* openssl*
     - name: Build
       run: make ENABLE_STATIC=true  DISABLE_SHADOWSOCKS=true
-    - name: F
-      run: ls -lah gen/.build
+    - name: Pack
+      run: tar -czf /tmp/redsocks.tar.gz . && cp /tmp/redsocks.tar.gz .
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+          name: redsocks.tar.gz
+          path: redsocks.tar.gz

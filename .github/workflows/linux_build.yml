@@ -13,4 +13,4 @@ jobs:
     - name: Build
       run: make ENABLE_STATIC=true  DISABLE_SHADOWSOCKS=true
     - name: F
-      run: ls -lah gen
+      run: ls -lah gen/.build

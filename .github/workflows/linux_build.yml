@@ -1,8 +1,6 @@
 name: linux_build
 
-on:  
-  workflow_dispatch
-
+on:  [push]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,4 +13,4 @@ jobs:
     - name: Build
       run: make ENABLE_STATIC=true  DISABLE_SHADOWSOCKS=true
     - name: F
-      run: ls -lah
+      run: ls -lah gen

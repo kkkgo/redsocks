@@ -11,8 +11,8 @@ jobs:
     - name: install depends
       run: |
         sudo apt update
-        sudo apt install -qq -y libssl* libevent*
+        sudo apt install -qq -y libssl* libevent* openssl*
     - name: Build
-      run: make ENABLE_STATIC=true USE_CRYPTO_POLARSSL=true  DISABLE_SHADOWSOCKS=true
+      run: make ENABLE_STATIC=true  DISABLE_SHADOWSOCKS=true
     - name: F
       run: ls -lah
